@@ -2,7 +2,7 @@
   "name": "gmachina",
   "slug": "gmachina",
   "version": "0.1.1",
-  "description": "Assets for gmachina.net",
+  "description": "Assets for gMachina.net",
   "main": "Gruntfile.js",
   "private": true,
   "scripts": {
@@ -43,12 +43,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/underlost/gmachina.net.git"
+    "url": "https://github.com/Unmodded/gmachina.net.git"
   },
-  "author": "Tyler Rilling (http://underlost.net/)",
-  "license": "MIT",
+  "author": "Unmodded (http://unmodded.net/)",
   "bugs": {
-    "url": "https://github.com/underlost/gmachina.net/issues"
+    "url": "https://github.com/Unmodded/gMachina.net/issues"
   },
-  "homepage": "https://gmachina.net"
+  "homepage": "http://gmachina.net"
 }

@@ -270,7 +270,7 @@ module.exports = function (grunt) {
     git_deploy: {
       github: {
         options: {
-          url: 'git@github.com:underlost/gMachina.git',
+          url: 'git@github.com:Unmodded/gMachina.net.git',
           branch: 'gh-pages',
           message: 'Deployed with UnderTasker' // Commit message
         },
