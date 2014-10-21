@@ -1,0 +1,23 @@
+safe: True
+port: 4001
+base-url:    /
+
+gems:
+  - jekyll-sitemap
+
+source:      ./src/site
+destination: ./_gh_pages
+plugins:     ./src/site/_plugins
+
+future:      true
+lsi:         false
+highlighter: true
+permalink:   :title
+
+rdiscount:
+  extensions: []
+
+# Custom vars
+current_version:  0.1.2
+site: https://gmachina.net
+author: Tyler Rilling

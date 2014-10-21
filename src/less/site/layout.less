@@ -1,0 +1,238 @@
+body,html {
+	-webkit-transform: translateZ(0px);
+	-webkit-text-size-adjust: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+img#thumb {
+	display: none
+}
+
+#background {
+	background-image: none;
+	background-image: -webkit-linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
+	background-image: -moz-linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
+	background-image: -ms-linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
+	background-image: -o-linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
+	background-image: linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
+
+	background-size: 1px 825px;
+	background-position: center 0;
+	display: block;
+	width: 100%;
+	height: 825px;
+	position: fixed;
+	top: 0;
+	z-index: -100;
+    overflow: hidden;
+}
+
+#stars1, #stars2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200%;
+	height: 100%;
+	z-index: 2;
+	overflow: hidden;
+	-webkit-animation-direction: alternate;
+	-moz-animation-direction: alternate;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+}
+
+#stars1 {
+	background: url(../img/stars1.png);
+	-webkit-animation-name: scroll1;
+	-webkit-animation-duration: 1180s;
+	-moz-animation-name: scroll1;
+	-moz-animation-duration: 180s;
+}
+
+#stars2 {
+	background: url(../img/stars2.png);
+	-webkit-animation-name: scroll2;
+	-webkit-animation-duration: 1360s;
+	-moz-animation-name: scroll2;
+	-moz-animation-duration: 360s;
+}
+
+#smog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0, bottom: 0; right: 0;
+    background-image: url("../img/giant_smog.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#moon {
+    position: absolute;
+    z-index: 1000;
+    width: 100px;
+    height: 100px;
+    top: 20px; left: 100px;
+    background-image: url("../img/moon_glow.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+}
+
+#strange-building {
+    position: absolute;
+    z-index: 10;
+    width: 1268px;
+    height: 555px;
+    bottom: 0px; right: 25%;
+	margin: auto;
+    background-image: url("../img/parallax_01.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1268px 555px;
+}
+
+#mountain-range {
+    position: absolute;
+    z-index: 8;
+    width: 1077px;
+    height: 574px;
+    bottom: -5px; right: -100px;
+    background-image: url("../img/parallax_02.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1077px 574px;
+}
+
+#title h1 {
+	position: relative;
+	font-weight: normal;
+	display: block;
+	overflow: hidden;
+	margin: auto;
+	height: 0;
+	width: 282px;
+	padding-top: 200px;
+	background-image: url("../img/logo.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+#title h4 { display: none;}
+
+
+
+#foreground {
+	-webkit-transform: translateZ(0px);
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	height: 750px;
+	top: 0;
+	z-index: 200
+}
+
+#cliffside {
+    position: absolute;
+    z-index: 500;
+    width: 329px;
+    height: 461px;
+    bottom: 0px; left: 0;
+    background-image: url("../img/parallax_05.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 329px 461px;
+}
+
+#crane {
+    position: absolute;
+    z-index: 500;
+    width: 253px;
+    height: 530px;
+    bottom: 0px; right: 0px;
+    background-image: url("../img/parallax_06.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 253px 530px;
+}
+
+#trees-far {
+	position: absolute;
+	bottom: 0px;
+	z-index: 400;
+	height: 350px;
+	width: 100%;
+	overflow: hidden;
+	background-position: center center;
+	background-image: url("../img/parallax_03.png");
+}
+
+#trees-near {
+	position: absolute;
+	bottom: 0;
+	z-index: 500;
+	height: 350px;
+	width: 100%;
+	overflow: hidden;
+	background-position: center center;
+	background-image: url("../img/parallax_04.png");
+}
+
+#chicken {
+    background-image: url("../img/chicken.png");
+	height: 55px;
+	width: 74px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	position: absolute;
+	left: 10px;
+	bottom: 448px;
+	z-index: 500;
+	background-size: 2960px 55px;
+}
+
+
+#content {
+	position: absolute;
+	width: 100%;
+	top: 735px;
+	background-color: #0a222c;
+}
+
+.wrapper {
+	max-width: 640px;
+	margin: auto;
+	padding: 50px 0 0;
+
+    h3 {
+		margin-top: 50px;
+		color: darken(@text-color, 25%);
+	}
+}
+
+#comingsoon {
+	margin-top: 30px;
+	color: darken(@text-color, 25%);
+
+}
+
+.social-links {
+    text-align: center;
+
+    a:link {color: darken(@text-color, 25%);}
+    a:hover {color: darken(@text-color, 15%); text-decoration: none;}
+}
+
+.site-footer {
+/*
+	background-image: url("../img/footer.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+*/
+    text-align: center;
+    padding: 25px 0 25px;
+
+	a {color: @text-color;}
+}
