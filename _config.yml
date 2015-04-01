@@ -5,9 +5,9 @@ base-url:    /
 gems:
   - jekyll-sitemap
 
-source:      ./src/site
+source:      ./source/site
 destination: ./_gh_pages
-plugins:     ./src/site/_plugins
+plugins:     ./source/site/_plugins
 
 future:      true
 lsi:         false
@@ -20,4 +20,5 @@ rdiscount:
 # Custom vars
 current_version:  0.1.2
 site: https://gmachina.net
-author: Tyler Rilling
+author: Unmodded.com
+desc: gMachina is a first person, psychological horror adventure game, scheduled to be released on PC, Mac, and Linux.

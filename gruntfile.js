@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
     jshint: {
       options: {
-        jshintrc: 'src/js/.jshintrc'
+        jshintrc: 'source/js/.jshintrc'
       },
       grunt: {
         options: {
@@ -43,16 +43,16 @@ module.exports = function (grunt) {
         src: ['Gruntfile.js', 'grunt/*.js']
       },
       src: {
-        src: 'src/js/*.js'
+        src: 'source/js/*.js'
       },
       test: {
-        src: 'src/js/tests/unit/*.js'
+        src: 'source/js/tests/unit/*.js'
       }
     },
 
     jscs: {
       options: {
-        config: 'src/js/.jscsrc'
+        config: 'source/js/.jscsrc'
       },
       grunt: {
         options: {
@@ -79,12 +79,12 @@ module.exports = function (grunt) {
       },
       undertask: {
         src: [
-          'src/js/lib/modernizr.js',
-          'src/js/lib/jquery.easing.1.3.js',
-          'src/js/lib/jquery.spritely.js',
-          'src/js/lib/jquery.stellar.js',
+          'source/js/lib/modernizr.js',
+          'source/js/lib/jquery.easing.1.3.js',
+          'source/js/lib/jquery.spritely.js',
+          'source/js/lib/jquery.stellar.js',
 
-          'src/js/script.js'
+          'source/js/script.js'
         ],
         dest: 'dist/js/<%= pkg.slug %>.js'
       }
@@ -105,9 +105,9 @@ module.exports = function (grunt) {
 
     qunit: {
       options: {
-        inject: 'src/js/tests/unit/phantom.js'
+        inject: 'source/js/tests/unit/phantom.js'
       },
-      files: 'src/js/tests/index.html'
+      files: 'source/js/tests/index.html'
     },
 
     less: {
@@ -120,7 +120,7 @@ module.exports = function (grunt) {
           sourceMapFilename: 'dist/css/<%= pkg.slug %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.slug %>.css': 'src/less/<%= pkg.slug %>.less'
+          'dist/css/<%= pkg.slug %>.css': 'source/less/<%= pkg.slug %>.less'
         }
       },
       minify: {
@@ -148,7 +148,7 @@ module.exports = function (grunt) {
 
     csslint: {
       options: {
-        csslintrc: 'src/less/.csslintrc'
+        csslintrc: 'source/less/.csslintrc'
       },
       src: [
         'dist/css/<%= pkg.slug %>.css'
@@ -176,7 +176,7 @@ module.exports = function (grunt) {
 
     csscomb: {
       options: {
-        config: 'src/less/.csscomb.json'
+        config: 'source/less/.csscomb.json'
       },
       dist: {
         expand: true,
@@ -190,7 +190,7 @@ module.exports = function (grunt) {
       dynamic: {
         files: [{
         expand: true,
-        cwd: 'src/img/',
+        cwd: 'source/img/',
         src: ['**/*.{png,jpg,gif}'],
         dest: 'dist/img/'
       }]
@@ -200,7 +200,7 @@ module.exports = function (grunt) {
     copy: {
       fonts: {
         expand: true,
-        cwd: './src',
+        cwd: './source',
         src: [
           'fonts/*'
         ],
@@ -215,7 +215,7 @@ module.exports = function (grunt) {
           'fonts/*',
           'img/*'
         ],
-        dest: 'src/site/dist'
+        dest: 'source/site/dist'
       },
     },
 
@@ -231,7 +231,7 @@ module.exports = function (grunt) {
     jekyll: {
       options : {
         bundleExec: true,
-        src : 'src/site',
+        src : 'source/site',
       },
       site: {}
     },
@@ -262,7 +262,7 @@ module.exports = function (grunt) {
         tasks: ['jshint:test', 'qunit']
       },
       less: {
-        files: 'src/less/*.less',
+        files: 'source/less/*.less',
         tasks: 'less'
       }
     },
@@ -283,6 +283,9 @@ module.exports = function (grunt) {
   // These plugins provide necessary tasks.
   require('load-grunt-tasks')(grunt, {scope: 'dependencies'});
   require('time-grunt')(grunt);
+
+  // Coffee build task.
+  grunt.registerTask('build-coffee', ['coffee']);
 
   // JS distribution task.
   grunt.registerTask('build-js', ['concat', 'uglify']);

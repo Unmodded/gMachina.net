@@ -6,27 +6,30 @@ body,html {
 	height: 100%;
 }
 
-img#thumb {
-	display: none
+#parallaxish {
+	position: relative;
+	width: 100%;
+	height: 750px;
+	overflow: hidden;
+	background-attachment: fixed;
 }
 
 #background {
 	background-image: none;
-	background-image: -webkit-linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
-	background-image: -moz-linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
-	background-image: -ms-linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
-	background-image: -o-linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
-	background-image: linear-gradient(#475f69 0px, #94acb6 825px, #0a222c 825px);
-
+	background-image: -webkit-linear-gradient(#004954 0px, #6b938b 825px, #000026 825px);
+	background-image: -moz-linear-gradient(#004954 0px, #6b938b 825px, #000026 825px);
+	background-image: -ms-linear-gradient(#004954 0px, #6b938b 825px, #000026 825px);
+	background-image: -o-linear-gradient(#004954 0px, #6b938b 825px, #000026 825px);
+	background-image: linear-gradient(#004954 0px, #6b938b 825px, #000026 825px);
 	background-size: 1px 825px;
 	background-position: center 0;
 	display: block;
 	width: 100%;
 	height: 825px;
 	position: fixed;
-	top: 0;
-	z-index: -100;
-    overflow: hidden;
+	background-attachment: fixed;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 4;
 }
 
 #stars1, #stars2 {
@@ -35,7 +38,7 @@ img#thumb {
 	left: 0;
 	width: 200%;
 	height: 100%;
-	z-index: 2;
+	z-index: 6;
 	overflow: hidden;
 	-webkit-animation-direction: alternate;
 	-moz-animation-direction: alternate;
@@ -46,9 +49,9 @@ img#thumb {
 #stars1 {
 	background: url(../img/stars1.png);
 	-webkit-animation-name: scroll1;
-	-webkit-animation-duration: 1180s;
+	-webkit-animation-duration: 1080s;
 	-moz-animation-name: scroll1;
-	-moz-animation-duration: 180s;
+	-moz-animation-duration: 1080s;
 }
 
 #stars2 {
@@ -61,6 +64,7 @@ img#thumb {
 
 #smog {
     position: absolute;
+	z-index: 5;
     width: 100%;
     height: 100%;
     top: 0; left: 0, bottom: 0; right: 0;
@@ -70,23 +74,21 @@ img#thumb {
 }
 
 #moon {
-    position: absolute;
-    z-index: 1000;
+    position: relative;
+	z-index: 11;
     width: 100px;
     height: 100px;
-    top: 20px; left: 100px;
-    background-image: url("../img/moon_glow.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
+	padding-top: 40px;
+	padding-left: 100px;
 }
 
 #strange-building {
     position: absolute;
+	z-index: 10;
     z-index: 10;
     width: 1268px;
     height: 555px;
-    bottom: 0px; right: 25%;
+    bottom: -100px; right: 25%;
 	margin: auto;
     background-image: url("../img/parallax_01.png");
     background-position: center center;
@@ -106,23 +108,19 @@ img#thumb {
     background-size: 1077px 574px;
 }
 
-#title h1 {
-	position: relative;
-	font-weight: normal;
+#site-title {
+	position: fixed;
+	top: 200px; left: 0; right: 0;
+	background-attachment: fixed;
+	z-index: 500;
 	display: block;
-	overflow: hidden;
-	margin: auto;
-	height: 0;
-	width: 282px;
-	padding-top: 200px;
-	background-image: url("../img/logo.png");
-    background-position: center bottom;
-    background-repeat: no-repeat;
+	height: 200px;
+	padding-top: 150px;
+	width: 100%;
+	text-align: center;
+	margin: 200 auto 0;
+	h1, h4 {display: none;}
 }
-
-#title h4 { display: none;}
-
-
 
 #foreground {
 	-webkit-transform: translateZ(0px);
@@ -160,7 +158,7 @@ img#thumb {
 
 #trees-far {
 	position: absolute;
-	bottom: 0px;
+	bottom: 20px;
 	z-index: 400;
 	height: 350px;
 	width: 100%;
@@ -195,10 +193,10 @@ img#thumb {
 
 
 #content {
-	position: absolute;
+	position: relative;
+	z-index: 500;
 	width: 100%;
-	top: 735px;
-	background-color: #0a222c;
+	background-color: #000026;
 }
 
 .wrapper {
@@ -206,16 +204,16 @@ img#thumb {
 	margin: auto;
 	padding: 50px 0 0;
 
+	p:first-child {
+		.lead();
+		margin-top: 30px;
+		color: darken(@text-color, 25%);
+	}
+
     h3 {
 		margin-top: 50px;
 		color: darken(@text-color, 25%);
 	}
-}
-
-#comingsoon {
-	margin-top: 30px;
-	color: darken(@text-color, 25%);
-
 }
 
 .social-links {
